@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Webcam Feed</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #video-container img {
+            border: 2px solid #333;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 80vh;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <img src="/video_feed" alt="Real-Time Webcam Feed">
+        <p id="status">Initializing webcam...</p>
+    </div>
+    <script>
+        const statusText = document.getElementById("status");
+
+        // Simulate status updates from Flask
+        const statuses = ["Blinking", "Looking right", "Looking left", "Looking center"];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            // Mock real-time status updates
+            statusText.textContent = "Status: " + statuses[currentIndex];
+            currentIndex = (currentIndex + 1) % statuses.length;
+        }, 3000);
+    </script>
+</body>
+</html>
