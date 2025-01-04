@@ -1,4 +1,4 @@
-dlib
+dlib==19.22.0
 numpy
 opencv-python
 setuptools
