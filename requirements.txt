@@ -2,6 +2,6 @@ dlib
 numpy
 opencv-python
 setuptools
-Flask
-Flask-Cors
+flask
+flask-cors
 gunicorn
